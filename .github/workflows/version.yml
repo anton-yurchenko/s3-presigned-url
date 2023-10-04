@@ -1,0 +1,35 @@
+name: Create Version
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        type: string
+        description: "Semantic Version (vX.X.X)"
+        required: true
+
+jobs:
+  create-version:
+    name: Create Version
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update dependencies
+        run: |
+          rm -rf node_modules package-lock.json
+          npm install
+
+      - name: Commit Changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: Update dependencies
+          committer_name: github-actions[bot]
+          committer_email: github-actions[bot]@users.noreply.github.com
+          push: false
+
+      - name: Create Version
+        uses: docker://antonyurchenko/changelog-version:v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          VERSION: ${{ github.event.inputs.version }}
+          UPDATE_TAGS: "true"
