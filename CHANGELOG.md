@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Changed
+
+- Decrease default expiration
+
 ## [1.0.0] - 2023-10-04
 
 _First Release_

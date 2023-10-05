@@ -23,7 +23,7 @@ inputs:
   expires_in:
     description: Number of seconds until the pre-signed URL expires
     required: true
-    default: "3600"
+    default: "300"
 outputs:
   url:
     description: PreSigned URL

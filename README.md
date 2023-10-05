@@ -30,7 +30,7 @@ GitHub Action to generate an AWS S3 PreSigned URL
 | `secret_access_key` | none | IAM User secret access key |
 | `bucket`  | none | S3 bucket name |
 | `path`  | none | Filepath (for example: artifacts/app.exe) |
-| `expires_in`  | `"3600"` | Number of seconds until the pre-signed URL expires |
+| `expires_in`  | `"300"` | Number of seconds until the pre-signed URL expires |
 
 | Output | Description |
 |:------:|:-----------:|
