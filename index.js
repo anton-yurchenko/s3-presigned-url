@@ -35,7 +35,6 @@ async function main () {
         Key: path
       }), { expiresIn })
 
-    core.info(url)
     core.setOutput('url', url)
   } catch (error) {
     core.setFailed('error generating a presigned url: ', error)
