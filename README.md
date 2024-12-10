@@ -31,6 +31,7 @@ GitHub Action to generate an AWS S3 PreSigned URL
 | `bucket`  | none | S3 bucket name |
 | `path`  | none | Filepath (for example: artifacts/app.exe) |
 | `expires_in`  | `"300"` | Number of seconds until the pre-signed URL expires |
+| `operation`  | `"GET"` | Operation to sign the URL for ("PUT" or "GET") |
 
 | Output | Description |
 |:------:|:-----------:|
