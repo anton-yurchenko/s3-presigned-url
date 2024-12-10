@@ -24,6 +24,10 @@ inputs:
     description: Number of seconds until the pre-signed URL expires
     required: true
     default: "300"
+  operation:
+    description: Operation to sign the URL for ("PUT" or "GET")
+    required: false
+    default: "GET"
 outputs:
   url:
     description: PreSigned URL
